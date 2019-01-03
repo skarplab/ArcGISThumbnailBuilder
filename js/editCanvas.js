@@ -25,7 +25,7 @@ var titleComponent = {
   _text: function() {
     editCanvas.letterSpacing = 2;
     ctx.fillStyle = 'rgba(255, 255, 255, 1)';
-    ctx.font = '30px sans-serif';
+    ctx.font = '400 30px Montserrat';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
 
@@ -75,7 +75,7 @@ var categoryComponent = {
     ctx.rotate(-0.5 * Math.PI);
     editCanvas.style.letterSpacing = 4;
     ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-    ctx.font = '48px sans-serif';
+    ctx.font = '600 48px Montserrat';
     ctx.textAlign = "center";
     ctx.fillText(this.properties.text(), 0, 0);
     ctx.restore();
@@ -94,7 +94,6 @@ var backgroundComponent = {
     var file = defaults.background;
 
     var background = new Image();
-    // background.crossOrigin = "Anonymous";
 
     background.onload = function() {
       sourceHeight = background.height;

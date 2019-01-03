@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Thumbnail Builder</title>
+  <title>Raleigh PRCR AGOL Thumbnail Builder</title>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="./css/materialize-colorpicker.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css" />
 </head>
 
@@ -15,11 +16,7 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="./index.html" class="brand-logo">ArcGIS Thumbnail Builder</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="gallery.html" target="_self">Gallery</a></li>
-        <li><a href="help.html" target="_self">Help</a></li>
-      </ul>
+      <a href="./index.html" class="brand-logo">Raleigh PRCR AGOL Thumbnail Builder</a>
     </div>
   </nav>
 
@@ -29,14 +26,13 @@
 
       <div class="col m6 offset-m3 s12">
         <div class="row">
-          <canvas id="edit-canvas"></canvas>
+          <canvas id="edit-canvas" class="z-depth-2"></canvas>
         </div>
 
         <div class="row">
           <h2>Title</h2>
           <div class="input-field col s12">
-            <input placeholder="Item Title" type="text" id="title" name="title" />
-            <label for="title">Item Title</label>
+            <input placeholder="Add item title" type="text" id="title" name="title" />
           </div>
         </div>
 
@@ -58,7 +54,7 @@
         </div>
 
         <div class="row">
-          <a id="download-image" download="thumbnail_generated.png" class="waves-effect waves-light btn deep-purple lighten-2"><i class="material-icons left">save</i>Download</a>
+          <a id="download-image" download="thumbnail_generated.png" class="waves-effect waves-light btn"><i class="material-icons left">save</i>Download</a>
         </div>
 
       </div>
