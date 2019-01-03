@@ -11,7 +11,7 @@ var titleComponent = {
       return document.querySelector("#title").value;
     },
     bgColor: function() {
-      return $("#title-color").colorpicker('getValue');
+      return defaults.titleColor;
     }
   },
   draw: function() {
@@ -58,7 +58,7 @@ var categoryComponent = {
       return document.querySelector('#category').value;
     },
     bgColor: function() {
-      return $("#category-color").colorpicker('getValue');
+      return defaults.sidebarColor;
     }
   },
   draw: function() {
@@ -91,11 +91,10 @@ var backgroundComponent = {
     this._addImage();
   },
   _addImage: function() {
-    var file = document.querySelector(this.properties.domId).files[0];
+    var file = defaults.background;
 
     var background = new Image();
-    background.crossOrigin = "Anonymous";
-    var reader = new FileReader();
+    // background.crossOrigin = "Anonymous";
 
     background.onload = function() {
       sourceHeight = background.height;
@@ -106,56 +105,10 @@ var backgroundComponent = {
       ctx.globalCompositeOperation = 'source-over';
     }
 
-    if (file) {
-      reader.addEventListener("load", function() {
-        background.src = reader.result;
-      }, false);
-
-      reader.readAsDataURL(file);
-    }
-
-    if (!file && document.querySelector('#background-url').value !== '') {
-      background.src = document.querySelector('#background-url').value;
-    }
+    background.src = file;
   }
 }
 
-// Logo
-
-var logoComponent = {
-  properties: {
-    domId: "#logo",
-  },
-  draw: function() {
-    this._addImage();
-  },
-  _addImage: function() {
-
-    var file = document.querySelector(this.properties.domId).files[0];
-    var background = new Image();
-    background.crossOrigin = "Anonymous";
-    var reader = new FileReader();
-
-    background.onload = function() {
-      sourceHeight = background.height;
-      sourceWidth = background.width;
-      ctx.drawImage(background, 0, 0, sourceWidth, sourceHeight,
-        5, 5, 145, 145);
-    }
-
-    if (file) {
-      reader.addEventListener("load", function() {
-        background.src = reader.result;
-      }, false);
-
-      reader.readAsDataURL(file);
-    }
-
-    if (!file && document.querySelector('#logo-url').value !== '') {
-      background.src = document.querySelector('#logo-url').value;
-    }
-  }
-}
 
 // main function to draw / redraw canvas
 function draw() {
@@ -164,38 +117,17 @@ function draw() {
   titleComponent.draw();
   categoryComponent.draw();
   backgroundComponent.draw();
-  logoComponent.draw();
 
   //Store to local storage.. next
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Color Picker
-  $('#title-color').colorpicker({
-    component: '.btn'
-  }).on('changeColor', draw);
-
-  $('#category-color').colorpicker({
-    component: '.btn'
-  }).on('changeColor', draw);
 
   // Update Events
   document.querySelector('#title').addEventListener('keyup', draw);
   document.querySelector('#category').addEventListener('change', draw);
-  document.querySelector('#background')
-    .addEventListener('change', draw);
-  document.querySelector('#logo')
-    .addEventListener('change', draw);
 
   // Any Query Params?
-  if (getUrlParameter('titleColor')) {
-    $("#title-color")
-      .colorpicker('setValue', 'rgba(' + getUrlParameter('titleColor') + ')');
-  }
-  if (getUrlParameter('sidebarColor')) {
-    $("#category-color")
-      .colorpicker('setValue', 'rgba(' + getUrlParameter('sidebarColor') + ')');
-  }
   if (getUrlParameter('title')) {
     $("#title").val(getUrlParameter('title'))
   }
@@ -209,9 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (getUrlParameter('background')) {
     $("#background-url").val(getUrlParameter('background'));
   }
-  if (getUrlParameter('logo')) {
-    $("#logo-url").val(getUrlParameter('logo'));
-  }
+
 
   // Select Dropdowns to Material Styles
   var elems = document.querySelectorAll('select');
