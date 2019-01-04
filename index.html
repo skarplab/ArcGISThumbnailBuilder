@@ -12,57 +12,70 @@
 </head>
 
 <body>
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="./index.html" class="brand-logo">Raleigh PRCR AGOL Thumbnail Builder</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
 
-  <nav>
-    <div class="nav-wrapper">
-      <a href="./index.html" class="brand-logo">Raleigh PRCR AGOL Thumbnail Builder</a>
-    </div>
-  </nav>
+      <div class="row">
 
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col m6 offset-m3 s12">
-        <div class="row">
-          <canvas id="edit-canvas" class="z-depth-2"></canvas>
-        </div>
-
-        <div class="row">
-          <h2>Title</h2>
-          <div class="input-field col s12">
-            <input placeholder="Add item title" type="text" id="title" name="title" />
+        <div class="col m6 offset-m3 s12">
+          <div class="row">
+            <canvas id="edit-canvas" class="z-depth-2"></canvas>
           </div>
-        </div>
 
-        <div class="row">
-          <h2>Sidebar</h2>
-          <div class="input-field col s12">
-            <select name="category" id="category">
-              <option value="Basemap">Basemap</option>
-              <option value="Collector App">Collector App</option>
-              <option value="Dashboard">Dashboard</option>
-              <option value="Document">Document</option>
-              <option value="Feature Service">Feature Service</option>
-              <option value="Map Service">Map Service</option>
-              <option value="Story Map">Story Map</option>
-              <option value="Table">Table</option>
-              <option value="Web App">Web App</option>
-              <option value="Web Map" selected>Web Map</option>
-          </select>
+          <div class="row">
+            <h2>Title</h2>
+            <div class="input-field col s12">
+              <input placeholder="Add item title" type="text" id="title" name="title" />
+            </div>
           </div>
-        </div>
 
-        <div class="row">
-          <a id="download-image" download="thumbnail_generated.png" class="waves-effect waves-light btn"><i class="material-icons left">save</i>Download</a>
+          <div class="row">
+            <h2>Sidebar</h2>
+            <div class="input-field col s12">
+              <select name="category" id="category">
+                <option value="Basemap">Basemap</option>
+                <option value="Collector App">Collector App</option>
+                <option value="Dashboard">Dashboard</option>
+                <option value="Document">Document</option>
+                <option value="Feature Service">Feature Service</option>
+                <option value="Map Service">Map Service</option>
+                <option value="Story Map">Story Map</option>
+                <option value="Table">Table</option>
+                <option value="Web App">Web App</option>
+                <option value="Web Map" selected>Web Map</option>
+            </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <a id="download-image" download="thumbnail_generated.png" class="waves-effect waves-light btn"><i class="material-icons left">save</i>Download</a>
+          </div>
+
         </div>
 
       </div>
+      <!-- /row -->
 
     </div>
-    <!-- /row -->
-
-  </div>
+  </main>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l12 s12">
+          <p>
+            Originally developed as <i><a href="https://dev.navigator.oregon.gov/agol/thumbnailbuilder/index.html">ArcGIS Thumbnail Builder</a></i> by <a href="https://github.com/tannerjt">Joshua Tanner</a> under the <a href="https://opensource.org/licenses/GPL-3.0">GNU General Public License v3.0</a> and customized by <a href="https://github.com/maptastik">Ryan Cooper</a> for use by City of Raleigh Parks, Recreation and Cultural Resources GIS. You can find Josh's original code <a href="https://github.com/tannerjt/ArcGISThumbnailBuilder">here</a> and the custom PRCR code <a href="https://github.com/skarplab/ArcGISThumbnailBuilder">here</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
   <!-- /container -->
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>

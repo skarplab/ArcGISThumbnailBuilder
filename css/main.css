@@ -1,6 +1,12 @@
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   background-color: #ABBF41;
   font-family: 'Montserrat', sans-serif;
+}
+main {
+  flex: 1 0 auto;
 }
 
 .brand-logo {
@@ -51,5 +57,9 @@ nav {
 }
 
 #download-image {
+  background-color: #0E3242;
+}
+
+.page-footer {
   background-color: #0E3242;
 }
